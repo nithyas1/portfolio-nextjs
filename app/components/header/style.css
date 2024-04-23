@@ -1,0 +1,8 @@
+
+
+#header ul li{
+    @apply inline-block ml-4 text-sm
+}
+#header ul li .link {
+    @apply hover:text-gray-300
+}

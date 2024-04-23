@@ -1,0 +1,14 @@
+#intro div p .link{
+    @apply text-cyan-700 dark:text-cyan-400
+}
+
+#intro div p .link:hover {
+    @apply text-cyan-800 dark:text-cyan-500
+}
+
+#intro .animate {
+    -moz-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+}
