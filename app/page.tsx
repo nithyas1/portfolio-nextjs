@@ -3,6 +3,7 @@ import Image from "next/image";
 import Header from './components/header/Header';
 import Home from "./components/home/Home";
 import Portfolio from "./components/portfolio/Portfolio";
+import Patterns from "./components/patterns/Patterns";
 
 export default function Page() {
   return (
@@ -11,6 +12,7 @@ export default function Page() {
         <Header />
         <Home />
         <Portfolio />
+        <Patterns />
       </div>
     </main>
   );

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import images from './images';
+import images from '../../utils/images';
 import './style.css';
 
 type GalleryItem = {
@@ -266,7 +266,7 @@ const Portfolio = () => {
             if(i%2 === 0) {
                 styleDirection = "-translate-x-56";
             }
-            photos.push(<article className={`${styleDirection} w-[50%] transition-transform duration-1000 ease-out translate-x-0 opacity-100`}><Link href={`../../../public/gallery/fulls/${i}.jpg`} className="relative block w-full"><Image src={images[i]} title={galleryItems[i+1].title} className='block w-full m-0' alt=""/></Link></article>);
+            photos.push(<article className={`w-[50%] transition-transform duration-1000 ease-out translate-x-0 opacity-100`}><Link href={`../../../public/gallery/fulls/${i}.jpg`} className="relative block w-full"><Image src={images[i]} title={galleryItems[i+1].title} className='block w-full m-0' alt=""/></Link></article>);
         }
 
         const pages = [];
@@ -292,7 +292,7 @@ const Portfolio = () => {
         pages.push(<button onClick={() => handlePageChange(page + 1)} className="page px-8 disabled:bg-gray-400 bg-cyan-700 hover:bg-cyan-500 dark:bg-cyan-400 dark:hover:bg-cyan-300" disabled={imageEnd >= totalPhotos}>&raquo;</button>)
 
         return (
-            <div className="w-['45rem'] max-w-full space-y-8">
+            <div className="w-[45rem] max-w-full space-y-8">
                 <div className='flex flex-wrap'>
                     {photos}
                 </div>
