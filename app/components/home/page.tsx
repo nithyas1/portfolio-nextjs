@@ -18,25 +18,27 @@ const Home = () => {
           Hoops & Loops emerged from my passion for crafting and the thrill of
           creating something beautiful. This website&apos;s more than just a
           showcase of my craftwork; it&apos;s also a platform where I display my
-          expertise as a front-end developer.
+          love for front-end development.
         </p>
         <p className="text-base font-semibold text-justify leading-7">
-          In the {" "}
+          In the{" "}
           <Link className="link" href="#portfolio">
             Portfolio
           </Link>{" "}
-          section, you&apos;ll find all the craft work I have done so far. If you are a crochet artist yourself, head over to the{" "}
+          section, you&apos;ll find all the craft work I have done so far. If
+          you are a crochet artist yourself, head over to the{" "}
           <Link className="link" href="#patterns">
             Patterns
           </Link>{" "}
-          section to see if anything tickles your fancy. And if you spot something you love in my work, don&apos;t be a stranger!  Hit me up on {" "}
+          section to see if anything tickles your fancy. And if you spot
+          something you love in my work, don&apos;t be a stranger! Hit me up on{" "}
           <Link
             className="link"
             href="https://www.instagram.com/_hoops.and.loops_"
             target="_blank"
           >
             Instagram
-          </Link>{" "}
+          </Link>
           ,{" "}
           <Link className="link" href="https://wa.me/9946525977">
             WhatsApp

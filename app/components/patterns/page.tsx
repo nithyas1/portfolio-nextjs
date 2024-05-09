@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import images from "../../utils/images";
 import rightArrow from "../../../public/images/right-arrow.svg";
+import darkRightArrow from "../../../public/images/dark-right-arrow.svg";
 
 const Patterns = () => {
   return (
@@ -38,7 +39,16 @@ const Patterns = () => {
           Crochet Pattern for Naruto - Intermediate level
         </span>
         <span className="flex justify-end">
-          <Image src={rightArrow} className="w-6" alt="Tap to open pattern" />
+          <Image
+            src={rightArrow}
+            className="w-6 hidden dark:block"
+            alt="Tap to open pattern"
+          />
+          <Image
+            src={darkRightArrow}
+            className="w-6 dark:hidden"
+            alt="Tap to open pattern"
+          />
         </span>
       </Link>
       <Link
@@ -58,7 +68,16 @@ const Patterns = () => {
           Crochet Pattern for Mr. Bean&apos;s Teddy - Beginner level
         </span>
         <span className="flex justify-end">
-          <Image src={rightArrow} className="w-6" alt="Tap to open pattern" />
+          <Image
+            src={rightArrow}
+            className="w-6 hidden dark:block"
+            alt="Tap to open pattern"
+          />
+          <Image
+            src={darkRightArrow}
+            className="w-6 dark:hidden"
+            alt="Tap to open pattern"
+          />
         </span>
       </Link>
       <a href="#aboutme" className="button style2 down anchored">
