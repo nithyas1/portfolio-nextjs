@@ -1,9 +1,10 @@
-import Image from "next/image";
-
-import Header from './components/header/Header';
-import Home from "./components/home/Home";
-import Portfolio from "./components/portfolio/Portfolio";
-import Patterns from "./components/patterns/Patterns";
+import Header from "./components/header/page";
+import Home from "./components/home/page";
+import Portfolio from "./components/portfolio/page";
+import Patterns from "./components/patterns/page";
+import AboutMe from "./components/aboutme/page";
+import MyWork from "./components/mywork/page";
+import Contact from "./components/contact/page";
 
 export default function Page() {
   return (
@@ -13,6 +14,9 @@ export default function Page() {
         <Home />
         <Portfolio />
         <Patterns />
+        <AboutMe />
+        <MyWork />
+        <Contact />
       </div>
     </main>
   );
