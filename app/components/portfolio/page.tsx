@@ -1,10 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, Variants } from "framer-motion";
 
-import images from "../../utils/images";
+import images from "@/app/utils/images";
+import {
+  transitionFromLeftAndRotate,
+  transitionFromRightAndRotate,
+  scaleOnHover,
+} from "@/app/utils/variants";
 import "./style.css";
 
 type GalleryItem = {
@@ -17,243 +23,243 @@ type GalleryItems = {
 };
 
 const galleryItems: GalleryItems = {
-  1: {
+  66: {
     title: "Soft White Gloves",
   },
-  2: {
+  65: {
     title: "Halloween Pumpkins",
     pattern:
       "https://amigurumi.today/free-halloween-amigurumi-pumpkin-crochet-pattern/",
   },
-  3: {
+  64: {
     title: "Fox Lovey",
   },
-  4: {
+  63: {
     title: "Little Sheep and Bunny",
   },
-  5: {
+  62: {
     title: "Granny Square Cardigan",
     pattern:
       "https://www.yarnspirations.com/patons-coziest-crochet-cardigan/PAC0128-001968M.html",
   },
-  6: {
+  61: {
     title: "Paw Print on Sweater",
   },
-  7: {
+  60: {
     title: "Soft Dice",
     pattern:
       "https://www.elisascrochet.com/post/soft-dice-free-crochet-pattern",
   },
-  8: {
+  59: {
     title: "Sheep Lovey",
   },
-  9: {
+  58: {
     title: "Soft Football",
   },
-  10: {
+  57: {
     title: "Little Girl Doll",
   },
-  11: {
+  56: {
     title: "Flower Cap with Hair",
     pattern:
       "https://www.youtube.com/watch?v=EP6U4jjKTCA&t=0s&ab_channel=HanDIYTutorials",
   },
-  12: {
+  55: {
     title: "Frozen's Elsa Cap",
     pattern:
       "https://www.youtube.com/watch?v=EP6U4jjKTCA&t=0s&ab_channel=HanDIYTutorials",
   },
-  13: {
+  54: {
     title: "Dandelion in Resin Pendant",
   },
-  14: {
+  53: {
     title: "Rose Petals Earrings and Pendant",
   },
-  15: {
+  52: {
     title: "Dragonfly Wings Earrings - design 1",
   },
-  16: {
+  51: {
     title: "Dragonfly Wings Earrings - design 2",
   },
-  17: {
+  50: {
     title: "Dragonfly Wings Earrings - design 3",
   },
-  18: {
+  49: {
     title: "Personalised Letter Keychain",
   },
-  19: {
+  48: {
     title: "Beach Themed Couple's Name Wall Hanging",
   },
-  20: {
+  47: {
     title: "Beach Themed Home Wall Hanging",
   },
-  21: {
+  46: {
     title: "Marble Effect Clock",
   },
-  22: {
+  45: {
     title: "Key Holder",
   },
-  23: {
+  44: {
     title: "Holographic Trinket Bowl",
   },
-  24: {
+  43: {
     title: "Memories Preserved in Resin",
   },
-  25: {
+  42: {
     title: "Crochet Bralette",
     pattern: "https://www.youtube.com/watch?v=TzTfxzUlGBU&ab_channel=ChendaDIY",
   },
-  26: {
+  41: {
     title: "Crocheted and Sewed Dress with Pockets",
   },
-  27: {
+  40: {
     title: "Multicolor Puff Stitch Beanie",
     pattern:
       "https://www.youtube.com/watch?v=X4uivY5FfSw&ab_channel=ClaudettaCrochet",
   },
-  28: {
+  39: {
     title: "Fit and Flare Skirt",
   },
-  29: {
+  38: {
     title: "Crochet pineapple crop top",
     pattern:
       "https://www.youtube.com/watch?v=9-SzGEBaosE&ab_channel=PassioKnitKelsie",
   },
-  30: {
+  37: {
     title: "Crochet Round Boho Purse",
     pattern:
       "https://makeanddocrew.com/street-fair-crochet-hippie-purse-free-pattern/",
   },
-  31: {
+  36: {
     title: "Baby Dress Set",
   },
-  32: {
+  35: {
     title: "Baby Owl Cap",
   },
-  33: {
+  34: {
     title: "Baby Earflap Cap",
   },
-  34: {
+  33: {
     title: "Cloud Cradle Hanging",
   },
-  35: {
+  32: {
     title: "Colorful Caterpillar",
   },
-  36: {
+  31: {
     title: "Sleepy Dog",
   },
-  37: {
+  30: {
     title: "Hello Kitty",
   },
-  38: {
+  29: {
     title: "Cat in a dress",
     pattern: "https://yourcrochet.com/cat-doll-in-dress-free-crochet-pattern/",
   },
-  39: {
+  28: {
     title: "Brontosaurus",
     pattern:
       "https://stringydingding.com/brontosaurus-dinosaur-amigurumi-free-crochet-pattern/",
   },
-  40: {
+  27: {
     title: "Fox",
     pattern: "",
   },
-  41: {
+  26: {
     title: "Cat with an attitude",
     pattern: "https://amigurumi.today/large-ami-cat-crochet-pattern/",
   },
-  42: {
+  25: {
     title: "Cuddly sheep",
     pattern: "https://amigurumi.today/amigurumi-sheep-plush-toy-pattern/",
   },
-  43: {
+  24: {
     title: "Snowman",
     pattern: "https://amigurumi.today/crochet-snowman-amigurumi-pattern/",
   },
-  44: {
+  23: {
     title: "Teddy Bear",
     pattern: "https://amigurumi.today/crochet-bear-in-overalls-free-pattern/",
   },
-  45: {
+  22: {
     title: "Yellow Rabbit",
   },
-  46: {
+  21: {
     title: "Yellow llama",
     pattern:
       "https://www.yarnspirations.com/row-en/red-heart-llama-no-drama/RHC0334-024120M.html",
   },
-  47: {
+  20: {
     title: "Pink llama",
     pattern:
       "https://www.yarnspirations.com/row-en/red-heart-llama-no-drama/RHC0334-024120M.html",
   },
-  48: {
+  19: {
     title: "Honey Bee",
   },
-  49: {
+  18: {
     title: "Owl",
   },
-  50: {
+  17: {
     title: "Angel",
     pattern:
       "https://www.youtube.com/watch?v=3qe5hM-y2qQ&ab_channel=OombawkaDesignCrochet",
   },
-  51: {
+  16: {
     title: "Basket weave crochet cushion cover",
   },
-  52: {
+  15: {
     title: "Flower Coasters and Pot",
     pattern: "https://youtu.be/GqRXD7nzaRk?si=Geq8iQ95hDKRYmvB",
   },
-  53: {
+  14: {
     title: "Sewed Boston Bag",
     Pattern: "https://www.youtube.com/watch?v=Fuu2Hq2ihQY",
   },
-  54: {
+  13: {
     title: "Crochet Roses",
     Pattern: "https://www.youtube.com/watch?v=z4VoUx2mC_U",
   },
-  55: {
+  12: {
     title: "Pikachu",
     pattern: "https://www.ravelry.com/patterns/library/pikachu-from-pokemon",
   },
-  56: {
+  11: {
     title: "Mr. Bean's Teddy",
   },
-  57: {
+  10: {
     title: "Squirtle",
     pattern: "https://www.ravelry.com/patterns/library/squirtle-from-pokemon",
   },
-  58: {
+  9: {
     title: "Sweater, Beanie and Booties set",
   },
-  59: {
+  8: {
     title: "Squishy Donut Cushion",
   },
-  60: {
+  7: {
     title: "Onesie, Beanie and Booties set",
   },
-  61: {
+  6: {
     title: "Air Dry Clay Dragonair",
   },
-  62: {
+  5: {
     title: "Toothless",
   },
-  63: {
+  4: {
     title: "Purple Dino",
     pattern:
       "https://bumcraftcrochet.com/2022/06/26/free-t-rex-dinosaur-crochet-pattern",
   },
-  64: {
+  3: {
     title: "Charmander",
     pattern: "https://www.1upcrochet.com/charmander-amigurumi-pattern-copy",
   },
-  65: {
+  2: {
     title: "Lapras",
     pattern:
       "https://www.deviantart.com/geekmakerart/art/Amigurumi-Pattern-Lapras-903506210",
   },
-  66: {
+  1: {
     title: "Naruto",
   },
 };
@@ -270,39 +276,49 @@ const Portfolio = () => {
   };
 
   const createGallery = () => {
-    const rowsShown = 6;
-    const imageStart = (page - 1) * rowsShown;
-    const imageEnd = Math.min(imageStart + rowsShown, totalPhotos);
+    const rowsShown: number = 6;
+    const imageStart: number = (page - 1) * rowsShown;
+    const imageEnd: number = Math.min(imageStart + rowsShown, totalPhotos);
     const photos = [];
-    for (let i = imageStart; i < imageEnd; i++) {
-      let styleDirection = "translate-x-56";
-      if (i % 2 === 0) {
-        styleDirection = "-translate-x-56";
-      }
+    for (let i: number = imageStart; i < imageEnd; i++) {
       photos.push(
-        <article
-          key={`image${i}`}
-          className={`w-[50%] transition-transform duration-1000 ease-out translate-x-0 opacity-100`}
+        <motion.div
+          variants={scaleOnHover}
+          initial="offscreen"
+          whileHover="hover"
+          whileTap="pressed"
+          whileInView="onscreen"
+          className="w-[50%] flex flex-wrap"
         >
-          <Link
-            href={`../../../public/gallery/fulls/${i}.jpg`}
-            className="relative block w-full"
-          >
-            <Image
-              src={images[i]}
-              title={galleryItems[i + 1].title}
-              className="block w-full m-0"
-              alt=""
-            />
-          </Link>
-        </article>
+          <article key={`image${i}`}>
+            <Link
+              href={`../../../public/gallery/fulls/${i}.jpg`}
+              className="relative block w-full shadow-indigo-500 dark:shadow-slate-300"
+            >
+              <motion.div
+                variants={
+                  i % 2
+                    ? transitionFromRightAndRotate
+                    : transitionFromLeftAndRotate
+                }
+              >
+                <Image
+                  src={images[i]}
+                  title={galleryItems[i + 1].title}
+                  className="block w-full m-0"
+                  alt={galleryItems[i + 1].title}
+                />
+              </motion.div>
+            </Link>
+          </article>
+        </motion.div>
       );
     }
 
-    const pages = [];
-    var numPages = totalPhotos / rowsShown;
-    let pageStart = 1;
-    let pageEnd = numPages;
+    const pages: Array<ReactNode> = [];
+    let numPages: number = totalPhotos / rowsShown;
+    let pageStart: number = 1;
+    let pageEnd: number = numPages;
     if (numPages > 5) {
       if (page + 4 < numPages) {
         pageStart = page;
@@ -377,7 +393,10 @@ const Portfolio = () => {
         {/* Gallery */}
         {createGallery()}
       </div>
-      <a href="#patterns" className="button style2 down anchored">
+      <a
+        href="#patterns"
+        className="button style2 down anchored sm:visible invisible"
+      >
         Next
       </a>
     </section>
