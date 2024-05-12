@@ -213,11 +213,11 @@ const galleryItems: GalleryItems = {
   },
   14: {
     title: "Sewed Boston Bag",
-    Pattern: "https://www.youtube.com/watch?v=Fuu2Hq2ihQY",
+    pattern: "https://www.youtube.com/watch?v=Fuu2Hq2ihQY",
   },
   13: {
     title: "Crochet Roses",
-    Pattern: "https://www.youtube.com/watch?v=z4VoUx2mC_U",
+    pattern: "https://www.youtube.com/watch?v=z4VoUx2mC_U",
   },
   12: {
     title: "Pikachu",
