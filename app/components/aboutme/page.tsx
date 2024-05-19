@@ -30,7 +30,7 @@ const AboutMe = () => {
             here, totally hooked (pun intended!) Big shoutout to all the amazing
             people who share free tutorials and patterns online - you guys rock!
             Without you, I never would have discovered this fantastic world of
-            crafting.
+            crocheting.
           </p>
         </motion.div>
       </motion.div>

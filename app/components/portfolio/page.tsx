@@ -291,8 +291,8 @@ const Portfolio = () => {
           className="w-[50%] flex flex-wrap"
         >
           <article key={`image${i}`}>
-            <Link
-              href={`../../../public/gallery/fulls/${i}.jpg`}
+            <div
+              // href={`../../../public/gallery/fulls/${i}.jpg`}
               className="relative block w-full shadow-indigo-500 dark:shadow-slate-300"
             >
               <motion.div
@@ -309,7 +309,7 @@ const Portfolio = () => {
                   alt={galleryItems[i + 1].title}
                 />
               </motion.div>
-            </Link>
+            </div>
           </article>
         </motion.div>
       );
@@ -367,7 +367,7 @@ const Portfolio = () => {
     );
 
     return (
-      <div className="max-w-full space-y-8">
+      <div className="max-w-full space-y-24">
         <div className="flex flex-wrap">{photos}</div>
         <div className="flex items-center justify-evenly w-full">{pages}</div>
       </div>
@@ -379,7 +379,7 @@ const Portfolio = () => {
       id="portfolio"
       className="flex relative m-0 overflow-x-hidden flex-col items-center justify-center space-y-12 px-0 py-24 min-h-full w-full align-baseline"
     >
-      <div className="max-w-full sm:w-[50%] w-[75%] space-y-12">
+      <div className="max-w-full sm:w-[50%] w-[75%] space-y-24">
         <header className="space-y-12">
           <h2 className="font-['TitleFont'] text-3xl font-extrabold">
             Portfolio
